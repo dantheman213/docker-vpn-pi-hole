@@ -35,7 +35,7 @@ ufw --force enable # non-interactive
 
 echo "Grab DockerHub VPN image..."
 echo "Generate OVPN config..."
-docker-compose run --rm openvpn ovpn_genconfig -u udp://$DVP_VPN_HOST
+docker-compose run --rm openvpn ovpn_genconfig -n 172.28.28.28 -u udp://$DVP_VPN_HOST
 docker-compose run --rm openvpn ovpn_initpki
 
 echo "Generate OVPN keys and certificates..."
